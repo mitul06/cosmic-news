@@ -1,5 +1,5 @@
 import React from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 import Navbar from './components/Navbar/Navbar'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -9,7 +9,7 @@ import Contact from './components/Contact/Contact'
 
 function App () {
 
-  // useEffect(() => {
+  // React.useEffect(() => {
   //   const options = {
   //     method: 'GET',
   //     url: 'https://free-news.p.rapidapi.com/v1/search',

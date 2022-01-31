@@ -1,0 +1,3 @@
+export const FETCH_API = 'FETCH_API'
+export const FETCH_API_SUCSESS = 'FETCH_API_SUCSESS'
+export const FETCH_API_FAILER = 'FETCH_API_FAILER'

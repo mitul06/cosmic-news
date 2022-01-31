@@ -1,15 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+  const [value, setValue] = useState('')
+  const navigation = useNavigate()
+
+  const handleChangeInput = event => {
+    setValue(event.target.value)
+  }
+
+  const handleChangeValue = e => {
+    navigation('/', { state: { value: value } })
+    setValue('')
+    e.preventDefault()
+  }
+
   return (
     <>
-      <nav
-        className='navbar navbar-expand-lg'
-       >
+      <nav className='navbar navbar-expand-lg'>
         <div className='container-fluid'>
           <a className='navbar-brand' href='/'>
-          <Link to='/'> Cosmic News </Link>        
+            <Link to='/'> Cosmic News </Link>
           </a>
           <button
             className='navbar-toggler'
@@ -40,14 +51,16 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-            <form className='d-flex'>
+            <form className='d-flex' onSubmit={handleChangeValue}>
               <input
-                className='form-control me-2'
+                className='form-control me-3'
                 type='search'
-                placeholder='Search...'
+                placeholder='Search for topics, locations & sources'
                 aria-label='Search'
+                value={value}
+                onChange={handleChangeInput}
               />
-              <button className='btn btn-outline-success' type='submit'>
+              <button className='btn btn-outline-warning' type='submit'>
                 Search
               </button>
             </form>
