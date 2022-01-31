@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
+// import axios from 'axios'
 import Navbar from './components/Navbar/Navbar'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -8,7 +8,7 @@ import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 
 function App () {
-  
+
   // useEffect(() => {
   //   const options = {
   //     method: 'GET',
